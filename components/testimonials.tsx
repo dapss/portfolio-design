@@ -5,19 +5,19 @@ import { motion, useReducedMotion } from "motion/react";
 const testimonials = [
   {
     quote:
-      "Her illustrations have a rare warmth that children immediately connect with. The Moon Thief would not be the same book without her vision.",
+      "Alexandr's illustrations have a rare warmth that children immediately connect with. The Moon Thief would not be the same book without his vision.",
     name: "Sari Dewi",
     role: "Editor, Little Oak Press",
   },
   {
     quote:
-      "Working with Risa on Alphabet Soup was a joy. She has an instinct for page composition that makes every spread feel alive.",
+      "Working with Alexandr on Alphabet Soup was a joy. He has an instinct for page composition that makes every spread feel alive.",
     name: "Thomas Grey",
     role: "Art Director, Meadowlark Books",
   },
   {
     quote:
-      "She brought a sensitivity to the dream sequences in Dream Weaver that exceeded what I had imagined. Her character work is extraordinary.",
+      "He brought a sensitivity to the dream sequences in Dream Weaver that exceeded what I had imagined. His character work is extraordinary.",
     name: "Amara Wibowo",
     role: "Author, Dream Weaver",
   },

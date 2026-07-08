@@ -5,7 +5,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Risa Astari | Children's Book Illustrator",
+  title: "Alexandr Olek | Children's Book Illustrator",
   description:
     "Portfolio of a children's book illustrator specializing in picture books, character design, and whimsical storytelling through watercolor and digital art.",
 };

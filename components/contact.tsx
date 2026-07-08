@@ -9,9 +9,9 @@ import {
 } from "@phosphor-icons/react";
 
 const links = [
-  { label: "Email", href: "mailto:hello@risaastari.com", icon: Envelope },
-  { label: "Instagram", href: "https://instagram.com/risaastari", icon: InstagramLogo },
-  { label: "LinkedIn", href: "https://linkedin.com/in/risaastari", icon: LinkedinLogo },
+  { label: "Email", href: "mailto:hello@alexandrolek.com", icon: Envelope },
+  { label: "Instagram", href: "https://instagram.com/alexandrolek", icon: InstagramLogo },
+  { label: "LinkedIn", href: "https://linkedin.com/in/alexandrolek", icon: LinkedinLogo },
 ];
 
 const colorClass = "hover:text-accent";
@@ -51,7 +51,7 @@ export default function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="mailto:hello@risaastari.com"
+                href="mailto:hello@alexandrolek.com"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white text-sm font-medium rounded-full hover:bg-accent-hover transition-all duration-300 active:scale-[0.97] shadow-lg shadow-accent/25"
               >
                 Start a project

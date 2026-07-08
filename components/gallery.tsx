@@ -123,17 +123,18 @@ function ProjectCard({ project, index, isMobile, reduce, onClick }: ProjectCardP
   const [isHovered, setIsHovered] = useState(false);
   const style = cardStyles[index % cardStyles.length];
 
-  const staggerY = isMobile || reduce ? 0 : style.desktopStagger;
-  const baseRotate = isMobile || reduce ? 0 : style.rotate;
-  const baseRotateUnder = isMobile || reduce ? 0 : style.rotateUnder;
-  const baseTranslateX = isMobile || reduce ? 0 : style.xOffset;
-  const baseTranslateY = isMobile || reduce ? 0 : style.yOffset;
+  const staggerY = isMobile ? 0 : (reduce ? 0 : style.desktopStagger);
+  const staggerX = isMobile ? (index % 2 === 0 ? -6 : 6) : 0;
+  const baseRotate = isMobile ? (index % 2 === 0 ? -1.5 : 1.5) : (reduce ? 0 : style.rotate);
+  const baseRotateUnder = isMobile ? (index % 2 === 0 ? 1 : -1) : (reduce ? 0 : style.rotateUnder);
+  const baseTranslateX = isMobile ? 0 : (reduce ? 0 : style.xOffset);
+  const baseTranslateY = isMobile ? 0 : (reduce ? 0 : style.yOffset);
 
   return (
     <div
-      className="relative w-full"
+      className={`relative w-full ${index > 0 ? "mt-[-16px] md:mt-0" : ""}`}
       style={{
-        transform: `translateY(${staggerY}px)`,
+        transform: `translateY(${staggerY}px) translateX(${staggerX}px)`,
         zIndex: isHovered ? 20 : 10,
       }}
     >
@@ -186,9 +187,11 @@ function ProjectCard({ project, index, isMobile, reduce, onClick }: ProjectCardP
           transition={{ type: "spring", stiffness: 130, damping: 20 }}
         >
           {/* Washi Tape */}
-          {!isMobile && !reduce && (
+          {!reduce && (
             <div
-              className="absolute top-[-5px] left-1/2 -translate-x-1/2 w-20 h-5.5 bg-surface-elevated/40 border border-border/40 backdrop-blur-[0.5px] pointer-events-none z-20 shadow-[0_1px_2px_rgba(43,34,29,0.02)] transition-all duration-300 group-hover:scale-95 group-hover:opacity-90"
+              className={`absolute top-[-5px] left-1/2 -translate-x-1/2 bg-surface-elevated/40 border border-border/40 backdrop-blur-[0.5px] pointer-events-none z-20 shadow-[0_1px_2px_rgba(43,34,29,0.02)] transition-all duration-300 group-hover:scale-95 group-hover:opacity-90 ${
+                isMobile ? "w-16 h-4.5" : "w-20 h-5.5"
+              }`}
               style={{
                 backgroundImage:
                   "repeating-linear-gradient(45deg, rgba(211, 107, 74, 0.02) 0px, rgba(211, 107, 74, 0.02) 2px, transparent 2px, transparent 4px)",
@@ -284,7 +287,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-x-8 md:gap-y-16">
+        <div className="flex flex-col md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-16">
           {projects.map((project, i) => (
             <ProjectCard
               key={project.title}

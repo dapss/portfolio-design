@@ -33,7 +33,7 @@ export default function Navigation() {
           href="#"
           className="font-display text-xl font-semibold tracking-tight text-text-primary"
         >
-          Risa Astari
+          Alexandr Olek
           <span className="text-accent">.</span>
         </a>
 
